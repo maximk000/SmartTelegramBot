@@ -6,7 +6,7 @@ import manual_utterances
 import logging
 import numpy as np
 import nltk
-import spacy
+# import spacy
 import wikipedia
 import wikipediaapi
 
@@ -25,7 +25,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 wiki = wikipediaapi.Wikipedia('en')
-#nlp = spacy.load('en_core_web_sm')
+# nlp = spacy.load('en_core_web_sm')
 
 CMD_TEXT_IDX = 0
 CMD_FUNC_IDX = 1
@@ -33,7 +33,7 @@ CMD_FUNC_IDX = 1
 
 def start_cmd(update, context):
     rand_idx = np.random.randint(len(manual_utterances.directed_greeting))
-    msg_text = "{} {}. I'm a Smart bot, please talk to me!".format(\
+    msg_text = "{} {}. I'm a Smart bot, please talk to me!".format(
         manual_utterances.directed_greeting[rand_idx], update.message.from_user.first_name)
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg_text)
 
@@ -117,7 +117,6 @@ def main():
 
     unknown_handler = MessageHandler(Filters.command, unknown)
     dispatcher.add_handler(unknown_handler)
-
 
     # description_conv = ConversationHandler(
     #     entry_points=[
