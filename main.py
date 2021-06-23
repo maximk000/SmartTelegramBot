@@ -43,6 +43,7 @@ def help_cmd(update, context):
                 """/start - Restarts our converstation (I will lose all my memory).\n""" \
                 """/caps -  I will shout your message back at you!\n""" \
                 """/help - Returns list of commands and some helpful information.\n\n""" \
+                """/wiki topic - Replace topic with something you want me to tell you about.\n\n""" \
                 """Or you can ask me something you want to know more about."""
 
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg_text)
